@@ -34,5 +34,6 @@ touch .env
 touch setup.py
 touch app.py
 touch requirements.txt
+touch push_data.py
 
 echo "Directry and files created successfuly"
