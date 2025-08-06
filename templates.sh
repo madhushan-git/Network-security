@@ -20,7 +20,9 @@ touch src/components/__init__.py
 touch src/entity/__init__.py
 touch src/constants/__init__.py
 touch src/exceptions/__init__.py
+touch src/exceptions/exceptions.py
 touch src/loggings/__init__.py
+touch src/loggings/logger.py
 touch src/pipeline/__init__.py
 touch src/clouds/__init__.py
 touch src/utils/__init__.py
