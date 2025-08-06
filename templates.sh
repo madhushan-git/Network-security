@@ -1,7 +1,7 @@
 # Make drirectory
 mkdir -p src/components
 mkdir -p src/entity
-mkdir -p src/constants
+mkdir -p src/constants/training_pipeline
 mkdir -p src/exceptions
 mkdir -p src/loggings
 mkdir -p src/pipeline
@@ -17,8 +17,12 @@ mkdir -p Notebooks
 # Creating files
 touch src/__init__.py
 touch src/components/__init__.py
+touch src/components/data_ingestion.py
 touch src/entity/__init__.py
+touch src/entity/config_entity.py
+touch src/entity/artifact_entity.py
 touch src/constants/__init__.py
+touch src/constants/training_pipeline/__init__.py
 touch src/exceptions/__init__.py
 touch src/exceptions/exceptions.py
 touch src/loggings/__init__.py
