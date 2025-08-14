@@ -6,7 +6,9 @@ mkdir -p src/exceptions
 mkdir -p src/loggings
 mkdir -p src/pipeline
 mkdir -p src/clouds
-mkdir -p src/utils
+mkdir -p src/utils/main_utils
+
+mkdir -p data_schema
 
 mkdir -p Network_Data
 
@@ -18,6 +20,7 @@ mkdir -p Notebooks
 touch src/__init__.py
 touch src/components/__init__.py
 touch src/components/data_ingestion.py
+touch src/components/data_validation.py
 touch src/entity/__init__.py
 touch src/entity/config_entity.py
 touch src/entity/artifact_entity.py
@@ -30,6 +33,10 @@ touch src/loggings/logger.py
 touch src/pipeline/__init__.py
 touch src/clouds/__init__.py
 touch src/utils/__init__.py
+touch src/utils/main_utils/__init__.py
+touch src/utils/main_utils/utils.py
+
+touch data_schema/schema.yaml
 
 touch .github/workflows/main.yml
 
