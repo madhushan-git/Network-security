@@ -24,17 +24,21 @@ class DataIngestion:
     def __init__(self,data_ingestion_config:DataIngestionConfig):
         try:
             self.data_ingestion_config=data_ingestion_config
+            logging.info("initiated data ingestion attributes")
         except Exception as e:
             raise NetworkSecurityException(e,sys)
         
     def export_collection_as_dataframe(self):
         try:
+            logging.info("logged to the export_collection_as_dataframe")
             database_name = self.data_ingestion_config.database_name
             collection_name = self.data_ingestion_config.collection_name
             self.mongo_client = pymongo.MongoClient(MONGO_DB_URL)
+            logging.info("Mongo client is initiated")
             collection = self.mongo_client[database_name][collection_name]
-
+            logging.info("collection is initiated")
             df = pd.DataFrame(list(collection.find()))
+            logging.info("Dataframe is initiated")
             if "_id" in df.columns.to_list():
                 df=df.drop(columns=["_id"],axis=1)
 
@@ -45,6 +49,7 @@ class DataIngestion:
         
     def export_data_into_feature_store(self,dataframe:pd.DataFrame):
         try:
+            logging.info("logged to the export_data_into_feature_store")
             feature_store_file_path=self.data_ingestion_config.feature_store_file_path
             #creating folder
             dir_path = os.path.dirname(feature_store_file_path)
@@ -79,7 +84,9 @@ class DataIngestion:
     def initiate_date_ingestion(self):
         try:
             dataframe=self.export_collection_as_dataframe()
+            logging.info("export_collection_as_dataframe done")
             dataframe=self.export_data_into_feature_store(dataframe)
+            logging.info("export_data_into_feature_store done")
             self.split_data_as_train_test(dataframe)
             data_ingestion_artifact=DataIngestionArtifact(
                 trained_file_path=self.data_ingestion_config.training_file_path,

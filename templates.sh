@@ -21,6 +21,7 @@ touch src/__init__.py
 touch src/components/__init__.py
 touch src/components/data_ingestion.py
 touch src/components/data_validation.py
+touch src/components/data_transformation.py
 touch src/entity/__init__.py
 touch src/entity/config_entity.py
 touch src/entity/artifact_entity.py
